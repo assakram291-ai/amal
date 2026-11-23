@@ -3,6 +3,7 @@ package ma.ofppt.ista.alamal
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
+import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -35,6 +36,14 @@ class PlaygroundActivity : AppCompatActivity() {
 //            }
 //            txtTotale.text = "$options Options(s):$prix DH"
 //        }
+        val radioGroupe=findViewById<RadioGroup>(R.id.grpForfait)
+        val txtforfait=findViewById<TextView>(R.id.txtForfait)
+        radioGroupe.setOnCheckedChangeListener { group, id ->
+            when(id){
+                R.id.rad30 -> txtforfait.text="Forfait 30 min,6 DH"
+                R.id.rad60 -> txtforfait.text="Forfait 60 min,10 DH"
+            }
+        }
     }
 
 }
